@@ -2,13 +2,16 @@
 
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Auth::routes();
 
 
 //allows vue-router to do its thingy
-Route::get('/{name}', function () {
+Route::get('/phonebook/{name}', function () {
     return redirect('/');
 })->where('name', '[A-za-z]+');
+
+
+Route::resource('phonebook', 'PhonebookController');

@@ -10,6 +10,7 @@ Vue.use(VueRouter);
 Vue.component('my-header', require('./components/Header.vue').default);
 Vue.component('my-footer', require('./components/footer.vue').default);
 
+
 const routes = [
     {
         path : '/',
@@ -22,7 +23,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-    mode: 'history',
+    //mode: 'history',
     routes,
 })
 
