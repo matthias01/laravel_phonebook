@@ -15,3 +15,4 @@ Route::get('/phonebook/{name}', function () {
 
 
 Route::resource('phonebook', 'PhonebookController');
+Route::post('phonebook/getdata','PhonebookController@getData');
