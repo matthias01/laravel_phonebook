@@ -18,11 +18,6 @@ class PhonebookController extends Controller
        return Phonebook::orderBy('name','ASC')->get();
     }
 
-    public function create()
-    {
-        //
-    }
-
 
     public function store(PhonebookRequest $request)
     {
@@ -33,30 +28,22 @@ class PhonebookController extends Controller
 
         $phone->save();
 
-       // return $request->all();
+        return $phone;
     }
 
 
-    public function show(Phonebook $phonebook)
+    public function update(PhonebookRequest $request, Phonebook $phonebook)
     {
-        //
-    }
 
-
-    public function edit(Phonebook $phonebook)
-    {
-        //
-    }
-
-
-    public function update(Request $request, Phonebook $phonebook)
-    {
-        //
+        $phonebook->name = $request->name;
+        $phonebook->email = $request->email;
+        $phonebook->phone_number = $request->phone_number;
+        $phonebook->update();
     }
 
 
     public function destroy(Phonebook $phonebook)
     {
-        //
+        $phonebook->delete();
     }
 }
